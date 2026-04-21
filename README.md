@@ -4,38 +4,9 @@ AI-assisted web application recon framework for authorized penetration testing a
 
 Built around a division of labor: automated tools handle volume, AI handles reasoning, human handles validation.
 
-# Output
+# Example
 
-```
-──────────────────────────────────────────────────────────────────────────────
-  [*] Target    : fsec
-  [*] TLD Mode  : AA-ZZ (ccTLD-format, 676 combinations)
-  [*] Method    : HTTPS only
-  [*] IP Resolve: ON (+hint)
-  [*] Verbose   : ON (all status codes)
-──────────────────────────────────────────────────────────────────────────────
-
-  [~] Scanning... (676 combinations)
-
-  STATUS | DOMAIN                         | IP                 |  PORT | SERVER               | HINT
-  -------+--------------------------------+--------------------+-------+----------------------+--------------
-  000   | fsec.aa                        | [CONN_REFUSED]     |     - | -                    | -
-  000   | fsec.ab                        | [CONN_REFUSED]     |     - | -                    | -
-  000   | fsec.ac                        | [CONN_REFUSED]     |     - | -                    | -
-  000   | fsec.ad                        | [CONN_REFUSED]     |     - | -                    | -
-  000   | fsec.ae                        | 151.253.158.85     |     - | -                    | -
-  000   | fsec.af                        | [CONN_REFUSED]     |     - | -                    | -
-  000   | fsec.ag                        | [CONN_REFUSED]     |     - | -                    | -
-  000   | fsec.ah                        | [CONN_REFUSED]     |     - | -                    | -
-  200   | https://fsec.ai                | 3.33.130.190       |   443 | -                    | -
-  000   | fsec.aj                        | [CONN_REFUSED]     |     - | -                    | -
-  000   | fsec.ak                        | [CONN_REFUSED]     |     - | -                    | -
-  000   | fsec.al                        | [CONN_REFUSED]     |     - | -                    | -
-  000   | fsec.am                        | [CONN_REFUSED]     |     - | -                    | -
-  000   | fsec.an                        | [CONN_REFUSED]     |     - | -                    | -
-  000   | fsec.ao                        | [CONN_REFUSED]     |     - | -                    | -
-  000   | fsec.ap
-```
+seker.png
 
 ---
 
