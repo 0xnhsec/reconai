@@ -6,7 +6,8 @@ Built around a division of labor: automated tools handle volume, AI handles reas
 
 # Example
 
-seker.png
+<img src="seker.png"/>
+
 
 ---
 
