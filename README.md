@@ -8,6 +8,7 @@ Built around a division of labor: automated tools handle volume, AI handles reas
 
 <img src="seker.png"/>
 
+<img src="ltx.png"/>
 
 ---
 
