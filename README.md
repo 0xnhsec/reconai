@@ -25,6 +25,63 @@ Phase 4               → Feed to Claude / DeepSeek
                       You validate in Burp Suite
 ```
 
+## Directories
+
+```
+.
+├── CLAUDE_PHASE4_PROMPT.md    Claude prompt template
+├── docs                       some docs for rules model
+├── GEMINI_SYSTEM_PROMPT.md    Gemini-cli prompt template
+├── install.sh                  Tools Installer
+├── LICENSE
+├── model.claude.txt            Fill your prompt for claude
+├── model.txt                   Fill your prompt for claude
+├── output                       The Output Recon
+│   └── localhost:3000
+│       ├── httpx.json
+│       ├── katana.json
+│       ├── live_hosts.txt
+│       ├── nuclei_cve.json
+│       ├── nuclei_misc.json
+│       ├── nuclei_tech.json
+│       ├── params.txt
+│       ├── phase1_assets.json
+│       ├── phase2_live.json
+│       ├── phase3_fingerprint.json
+│       ├── ports.json
+│       ├── recon_full.json
+│       └── subs_all.txt
+├── phase1
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-314.pyc
+│   │   └── runner.cpython-314.pyc
+│   └── runner.py
+├── {phase1,phase2,phase3,output,docs}
+├── phase2
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-314.pyc
+│   │   └── runner.cpython-314.pyc
+│   └── runner.py
+├── phase3
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-314.pyc
+│   │   └── runner.cpython-314.pyc
+│   └── runner.py
+├── prompt-id.txt                  indonesian prompr
+├── README.md
+├── recon.py                        Main tools
+├── requirements.txt
+├── results                         results tools
+│   └── localhost:3000.txt
+├── SCOPE.md
+├── seker.png
+├── TOOL_CATALOG.md
+└── TOOLS_LIST.md
+```
+
 ---
 
 ## Install Dependencies (Arch Linux)
