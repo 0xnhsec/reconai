@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "phase": 1,
+    "phase_name": "asset_discovery",
+    "target": "localhost:3000",
+    "timestamp": "2026-04-21T18:05:58.033958",
+    "output_dir": "/home/nsx/reconai/output/localhost:3000"
+  },
+  "tools_run": {
+    "assetfinder": "ok",
+    "sublist3r": "no_output",
+    "waybackurls": "ok",
+    "crt.sh": "failed"
+  },
+  "subdomains": {
+    "total": 1,
+    "list": [
+      "localhost:3000"
+    ]
+  },
+  "wayback_urls": {
+    "total": 0,
+    "list": []
+  },
+  "ai_note": "Passive only \u2014 no direct target contact. All subdomains require live validation in Phase 2.",
+  "next_phase": "Feed output/subs_all.txt to phase2/runner.py"
+}

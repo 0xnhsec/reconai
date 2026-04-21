@@ -1,0 +1,817 @@
+{
+  "meta": {
+    "framework": "ReconAI by @0xnhsec",
+    "target": "localhost:3000",
+    "timestamp": "2026-04-21T18:16:35.087471",
+    "ready_for_phase4": true
+  },
+  "phase1_assets": {
+    "meta": {
+      "phase": 1,
+      "phase_name": "asset_discovery",
+      "target": "localhost:3000",
+      "timestamp": "2026-04-21T18:05:58.033958",
+      "output_dir": "/home/nsx/reconai/output/localhost:3000"
+    },
+    "tools_run": {
+      "assetfinder": "ok",
+      "sublist3r": "no_output",
+      "waybackurls": "ok",
+      "crt.sh": "failed"
+    },
+    "subdomains": {
+      "total": 1,
+      "list": [
+        "localhost:3000"
+      ]
+    },
+    "wayback_urls": {
+      "total": 0,
+      "list": []
+    },
+    "ai_note": "Passive only \u2014 no direct target contact. All subdomains require live validation in Phase 2.",
+    "next_phase": "Feed output/subs_all.txt to phase2/runner.py"
+  },
+  "phase2_live": {
+    "meta": {
+      "phase": 2,
+      "phase_name": "live_validation",
+      "target": "localhost:3000",
+      "timestamp": "2026-04-21T18:06:52.049566",
+      "output_dir": "/home/nsx/reconai/output/localhost:3000"
+    },
+    "tools_run": {
+      "httprobe": "ok",
+      "httpx": "ok",
+      "naabu": "ok",
+      "rustscan": "no_output"
+    },
+    "live_hosts": {
+      "total": 1,
+      "hosts": [
+        {
+          "host": "localhost:3000",
+          "url": "http://localhost:3000",
+          "status_code": 0,
+          "title": "OWASP Juice Shop",
+          "tech": [],
+          "server": "",
+          "ip": "localhost",
+          "port": "3000",
+          "content_length": 0
+        }
+      ]
+    },
+    "open_ports": {
+      "total": 2,
+      "results": [
+        {
+          "host": "localhost",
+          "ip": "::1",
+          "timestamp": "2026-04-21T11:06:52.021698694Z",
+          "port": 3000,
+          "protocol": "tcp",
+          "tls": false
+        },
+        {
+          "host": "localhost",
+          "ip": "127.0.0.1",
+          "timestamp": "2026-04-21T11:06:52.021811365Z",
+          "port": 3000,
+          "protocol": "tcp",
+          "tls": false
+        }
+      ],
+      "rustscan_raw": []
+    },
+    "ai_note": "All data verified by tools. Tech stack and status codes are tool-confirmed. Port results require service verification.",
+    "next_phase": "Feed /home/nsx/reconai/output/localhost:3000/live_hosts.txt to phase3/runner.py"
+  },
+  "phase3_fingerprint": {
+    "meta": {
+      "phase": 3,
+      "phase_name": "deep_fingerprint",
+      "target": "localhost:3000",
+      "timestamp": "2026-04-21T18:09:08.675654",
+      "output_dir": "/home/nsx/reconai/output/localhost:3000"
+    },
+    "tools_run": {
+      "whatweb": "parse_error",
+      "katana": "ok",
+      "paramspider": "ok",
+      "nuclei-tech": "ok",
+      "nuclei-cve": "ok",
+      "nuclei-misconfig": "ok",
+      "subjs": "ok",
+      "secretfinder": "ok"
+    },
+    "tech_stack": {},
+    "endpoints_discovered": {
+      "total": 110,
+      "list": [
+        {
+          "url": "http://localhost:3000",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/scripts.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/chunk-24EZLZ4I.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/chunk-T3PSKZ45.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/chunk-TWZW5B45.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/polyfills.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/chunk-LHKS7QUN.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/chunk-4MIYPPGW.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/styles.css",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/main.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/redirect?to=https",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/redirect?to=http",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/wallet-web3.module-RPGFJNJW.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/faucet.module-ZH74DQGR.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/typescript-UDT5SHEV.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/yaml-UHPDYXVZ.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/ngx-highlightjs-line-numbers-6NZGNB3C.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/application/vnd.ms-word.do",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/javascript-7C6DVIGG.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/application/vnd.openxmlformats-officedocument.wordprocessingml.do",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/core-C2XGVFZK.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/chunk-YRGZNTPL.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/juice-shop/node_modules/morgan/index.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/juice-shop/build/routes/verify.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/-",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/juice-shop/node_modules/express/lib/router/index.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/juice-shop/build/routes/redirect.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/juice-shop/node_modules/express/lib/router/layer.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/juice-shop/node_modules/express/lib/router/route.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/web3-sandbox.module-GG5AZS6F.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/snippets/verdict",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/snippets/fixes",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/api/Cards",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/wallet/balance",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/order-history",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/image-captcha/",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/user",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/track-result/new",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/address/create",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/address/edit/",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/index",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/meta",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/juice-shop/build/routes/orderHistory.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/xml/xml",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/juice-shop/build/routes/angular.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/codemirror-CUGPEQ5R.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/Vue.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/api/Addresss",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/PEG.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/lib/codemirror",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/api/Recycles",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/chunk-XFLMN5IC.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/api/Complaints",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/chatbot",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/products",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/2fa/enter",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/api/SecurityAnswers",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/chunk-D27OXLTH.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/track-order",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/address/select",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/assets/public/images/products/",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/assets/i18n/",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/address/saved",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/assets/public/images/",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/api/BasketItems",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/deluxe-membership",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/saveLoginIp",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/user/whoami",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/user/reset-password",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/user/change-password?current=",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/user/login",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/user/authentication-details/",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/user/security-question?email=",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/api/Users",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/country-mapping",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/confetti-5NW67UGY.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/continue-code-fixIt/apply/",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/continue-code-findIt/apply/",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/continue-code/apply/",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/captcha",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/continue-code",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/repeat-notification",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/api/Hints",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/api/Deliverys",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/memories",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/hacking-instructor-OYUKCDGG.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/api/Quantitys",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/admin/application-configuration",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/api/Products",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/'+L(i[8])+'",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/api/%5C%22/",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/web3",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/%27+L%28i%5B11%5D%7C%7Cg%5Bw.toLowerCase%28%29%5D%29+%27",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/admin",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/%5C/index.html",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/Trident/",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/Edge/",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/zone.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/Zone.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/text/",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/%7B%7Bhref%7D%7D",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/highlight.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/Highlight.js",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/continue-code-fixIt",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/rest/continue-code-findIt",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/api/SecurityQuestions",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/api/Feedbacks",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/api/Challenges/",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/api/Challenges",
+          "method": "GET",
+          "source": "katana"
+        },
+        {
+          "url": "http://localhost:3000/api/%5C%22/ftp/legal.md%5C%22",
+          "method": "GET",
+          "source": "katana"
+        }
+      ]
+    },
+    "parameters_found": {
+      "total": 1,
+      "list": [
+        "http://localhost:3000/2016/7/27/headlines/sanders_supporters_walk_out_stage_sit_in_to_protest_nomination?utm_source=FUZZ&utm_campaign=FUZZ&utm_medium=FUZZ&utm_term=FUZZ"
+      ]
+    },
+    "nuclei_findings": {
+      "total": 12,
+      "findings": [
+        {
+          "template_id": "fingerprinthub-web-fingerprints",
+          "name": "FingerprintHub Technology Fingerprint",
+          "severity": "info",
+          "type": "http",
+          "host": "localhost",
+          "matched_at": "http://localhost:3000",
+          "verified_by_tool": true,
+          "confidence": "HIGH",
+          "source": "nuclei"
+        },
+        {
+          "template_id": "owasp-juice-shop-detect",
+          "name": "OWASP Juice Shop",
+          "severity": "info",
+          "type": "http",
+          "host": "localhost",
+          "matched_at": "http://localhost:3000",
+          "verified_by_tool": true,
+          "confidence": "HIGH",
+          "source": "nuclei"
+        },
+        {
+          "template_id": "http-missing-security-headers",
+          "name": "HTTP Missing Security Headers",
+          "severity": "info",
+          "type": "http",
+          "host": "localhost",
+          "matched_at": "http://localhost:3000",
+          "verified_by_tool": true,
+          "confidence": "HIGH",
+          "source": "nuclei"
+        },
+        {
+          "template_id": "http-missing-security-headers",
+          "name": "HTTP Missing Security Headers",
+          "severity": "info",
+          "type": "http",
+          "host": "localhost",
+          "matched_at": "http://localhost:3000",
+          "verified_by_tool": true,
+          "confidence": "HIGH",
+          "source": "nuclei"
+        },
+        {
+          "template_id": "http-missing-security-headers",
+          "name": "HTTP Missing Security Headers",
+          "severity": "info",
+          "type": "http",
+          "host": "localhost",
+          "matched_at": "http://localhost:3000",
+          "verified_by_tool": true,
+          "confidence": "HIGH",
+          "source": "nuclei"
+        },
+        {
+          "template_id": "http-missing-security-headers",
+          "name": "HTTP Missing Security Headers",
+          "severity": "info",
+          "type": "http",
+          "host": "localhost",
+          "matched_at": "http://localhost:3000",
+          "verified_by_tool": true,
+          "confidence": "HIGH",
+          "source": "nuclei"
+        },
+        {
+          "template_id": "http-missing-security-headers",
+          "name": "HTTP Missing Security Headers",
+          "severity": "info",
+          "type": "http",
+          "host": "localhost",
+          "matched_at": "http://localhost:3000",
+          "verified_by_tool": true,
+          "confidence": "HIGH",
+          "source": "nuclei"
+        },
+        {
+          "template_id": "http-missing-security-headers",
+          "name": "HTTP Missing Security Headers",
+          "severity": "info",
+          "type": "http",
+          "host": "localhost",
+          "matched_at": "http://localhost:3000",
+          "verified_by_tool": true,
+          "confidence": "HIGH",
+          "source": "nuclei"
+        },
+        {
+          "template_id": "http-missing-security-headers",
+          "name": "HTTP Missing Security Headers",
+          "severity": "info",
+          "type": "http",
+          "host": "localhost",
+          "matched_at": "http://localhost:3000",
+          "verified_by_tool": true,
+          "confidence": "HIGH",
+          "source": "nuclei"
+        },
+        {
+          "template_id": "http-missing-security-headers",
+          "name": "HTTP Missing Security Headers",
+          "severity": "info",
+          "type": "http",
+          "host": "localhost",
+          "matched_at": "http://localhost:3000",
+          "verified_by_tool": true,
+          "confidence": "HIGH",
+          "source": "nuclei"
+        },
+        {
+          "template_id": "http-missing-security-headers",
+          "name": "HTTP Missing Security Headers",
+          "severity": "info",
+          "type": "http",
+          "host": "localhost",
+          "matched_at": "http://localhost:3000",
+          "verified_by_tool": true,
+          "confidence": "HIGH",
+          "source": "nuclei"
+        },
+        {
+          "template_id": "http-missing-security-headers",
+          "name": "HTTP Missing Security Headers",
+          "severity": "info",
+          "type": "http",
+          "host": "localhost",
+          "matched_at": "http://localhost:3000",
+          "verified_by_tool": true,
+          "confidence": "HIGH",
+          "source": "nuclei"
+        }
+      ]
+    },
+    "js_secrets": {
+      "total": 0,
+      "list": []
+    },
+    "ai_note": {
+      "verified": "nuclei and secretfinder findings are tool-confirmed signals. Not all are exploitable \u2014 severity and context must be validated manually.",
+      "inferred": "Endpoints and parameters are discovered artifacts. Exploitability is NOT confirmed by this phase.",
+      "next_step": "Feed this JSON + phase1 + phase2 JSON to Claude/DeepSeek for Phase 4 analysis."
+    }
+  }
+}

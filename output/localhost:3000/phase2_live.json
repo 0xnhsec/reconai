@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "phase": 2,
+    "phase_name": "live_validation",
+    "target": "localhost:3000",
+    "timestamp": "2026-04-21T18:06:52.049566",
+    "output_dir": "/home/nsx/reconai/output/localhost:3000"
+  },
+  "tools_run": {
+    "httprobe": "ok",
+    "httpx": "ok",
+    "naabu": "ok",
+    "rustscan": "no_output"
+  },
+  "live_hosts": {
+    "total": 1,
+    "hosts": [
+      {
+        "host": "localhost:3000",
+        "url": "http://localhost:3000",
+        "status_code": 0,
+        "title": "OWASP Juice Shop",
+        "tech": [],
+        "server": "",
+        "ip": "localhost",
+        "port": "3000",
+        "content_length": 0
+      }
+    ]
+  },
+  "open_ports": {
+    "total": 2,
+    "results": [
+      {
+        "host": "localhost",
+        "ip": "::1",
+        "timestamp": "2026-04-21T11:06:52.021698694Z",
+        "port": 3000,
+        "protocol": "tcp",
+        "tls": false
+      },
+      {
+        "host": "localhost",
+        "ip": "127.0.0.1",
+        "timestamp": "2026-04-21T11:06:52.021811365Z",
+        "port": 3000,
+        "protocol": "tcp",
+        "tls": false
+      }
+    ],
+    "rustscan_raw": []
+  },
+  "ai_note": "All data verified by tools. Tech stack and status codes are tool-confirmed. Port results require service verification.",
+  "next_phase": "Feed /home/nsx/reconai/output/localhost:3000/live_hosts.txt to phase3/runner.py"
+}

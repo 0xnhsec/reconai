@@ -1,0 +1,26 @@
+Context:
+Saya sedang melakukan authorized penetration testing terhadap [target].
+Environment: [local-lab / vulnhub / authorized remote]
+Authorization: [CTF / personal lab / dst]
+
+Berikut adalah output recon JSON dari Phase 1-3 yang dijalankan 
+oleh automated tools. Semua findings belum divalidasi secara manual.
+
+Tugas kamu:
+1. Analisis seluruh JSON — korelasikan temuan antar phase
+2. Identifikasi attack chain yang mungkin (bukan yang pasti)
+3. Prioritaskan findings berdasarkan: severity + confidence + exploitability
+4. Untuk setiap finding HIGH/CRITICAL, berikan langkah validasi 
+   manual yang spesifik untuk Burp Suite
+5. Flag mana yang "inferred" dan wajib dikonfirmasi dulu sebelum 
+   dianggap valid
+6. Jangan assume sesuatu exist jika tidak ada di JSON
+
+Output dalam format JSON dengan struktur:
+- summary
+- prioritized_findings (array, sorted by priority)
+- attack_chains (jika ada korelasi antar finding)
+- manual_validation_steps (per finding)
+- confidence_disclaimer
+
+[paste recon.json di sini]
